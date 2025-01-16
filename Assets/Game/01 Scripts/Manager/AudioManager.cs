@@ -1,66 +1,83 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class AudioManager : SingletonLoadResource<AudioManager>
+namespace Hajime.Audios
 {
-    private AudioSource soundFXSource;
-    private AudioSource musicSource;
-    private AudioSource ambientSource;
-
-    public bool HasInitialized { get; private set; }
-    public override void Initialize()
+    public class AudioManager : SingletonAutoCreate<AudioManager>
     {
-        base.Initialize();
+        #region Auto Create Instance
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        private static void AutoCreateInstance() { var _ = Instance; }
+        #endregion
 
-        // InitializeAudioSources()
-        soundFXSource = this.gameObject.AddComponent<AudioSource>();
-        soundFXSource.playOnAwake = false;
-        soundFXSource.loop = false;
+        private AudioSource soundFXSource, musicSource, ambientSource;
 
-        musicSource = this.gameObject.AddComponent<AudioSource>();
-        musicSource.playOnAwake = false;
-        musicSource.loop = true;
+        #region Public Properties
+        public bool HasInitialized { get; private set; }
+        #endregion
 
-        ambientSource = this.gameObject.AddComponent<AudioSource>();
-        ambientSource.playOnAwake = false;
-        ambientSource.loop = true;
-
-        HasInitialized = true;
-    }
-
-    public void Play(Audio audio)
-    {
-        if (audio.IsEmpty)
+        protected override void OnAwake()
         {
-            Debug.LogWarning("Audio is empty");
-            return;
+            base.OnAwake();
+            Initialize();
         }
 
-        HandleAudioSource(audio);
-
-    }
-
-    private void HandleAudioSource(Audio audio)
-    {
-        switch (audio.Channel)
+        private void Initialize()
         {
-            case AudioChannel.Ambient:
-                PlayAudio(ambientSource, audio);
-                break;
-            case AudioChannel.Music:
-                PlayAudio(musicSource, audio);
-                break;
-            case AudioChannel.SoundFX:
-                PlayAudio(soundFXSource, audio);
-                break;
-        }
-    }
+            if (HasInitialized) return;
 
-    private void PlayAudio(AudioSource source, Audio audio)
-    {
-        source.clip = audio.Clip;
-        source.volume = audio.Volume;
-        source.loop = audio.Loop;
-        source.PlayDelayed(audio.Delay);
+            soundFXSource = this.gameObject.AddComponent<AudioSource>();
+            soundFXSource.playOnAwake = false;
+            soundFXSource.loop = false;
+
+            musicSource = this.gameObject.AddComponent<AudioSource>();
+            musicSource.playOnAwake = false;
+            musicSource.loop = true;
+
+            ambientSource = this.gameObject.AddComponent<AudioSource>();
+            ambientSource.playOnAwake = false;
+            ambientSource.loop = true;
+
+            HasInitialized = true;
+            Debug.Log("[AudioManager] Initialized");
+        }
+
+        public void Play(Audio audio)
+        {
+            if (audio.IsEmpty)
+            {
+                Debug.LogWarning("Audio is empty");
+                return;
+            }
+
+            HandleAudioSource(audio);
+        }
+
+        private void HandleAudioSource(Audio audio)
+        {
+            switch (audio.Channel)
+            {
+                case AudioChannel.Ambient:
+                    PlayAudio(ambientSource, audio);
+                    break;
+                case AudioChannel.Music:
+                    PlayAudio(musicSource, audio);
+                    break;
+                case AudioChannel.SoundFX:
+                    PlayAudio(soundFXSource, audio);
+                    break;
+            }
+        }
+
+        private void PlayAudio(AudioSource source, Audio audio)
+        {
+            source.clip = audio.Clip;
+            source.volume = audio.Volume;
+            source.loop = audio.Loop;
+            source.PlayDelayed(audio.Delay);
+        }
+
     }
 }

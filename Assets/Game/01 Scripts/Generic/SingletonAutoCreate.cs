@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class SingletonAutoCreate<T> : MonoBehaviour where T : MonoBehaviour
+using System;
+public abstract class SingletonAutoCreate<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T instance;
-    private static readonly object _lock = new object();
     private static bool applicationIsQuitting = false;
 
     public static T Instance
@@ -18,38 +17,38 @@ public class SingletonAutoCreate<T> : MonoBehaviour where T : MonoBehaviour
                 return null;
             }
 
-            lock (_lock)
+            if (instance == null)
             {
+                instance = FindObjectOfType<T>();
+
                 if (instance == null)
                 {
-                    instance = FindObjectOfType<T>();
+                    GameObject singleton = new GameObject();
+                    instance = singleton.AddComponent<T>();
+                    singleton.name = $"[Singleton] {typeof(T)}";
 
-                    if (instance == null)
-                    {
-                        GameObject singleton = new GameObject();
-                        instance = singleton.AddComponent<T>();
-                        singleton.name = $"[Singleton] {typeof(T)}";
+                    DontDestroyOnLoad(singleton);
 
-                        DontDestroyOnLoad(singleton);
-
-                        Debug.Log($"[Singleton] Tạo instance mới của {typeof(T)}");
-                    }
-                    else
-                    {
-                        Debug.Log($"[Singleton] Sử dụng instance có sẵn của {typeof(T)}");
-                        DontDestroyOnLoad(instance.gameObject);
-                    }
+                    Debug.Log($"[Singleton] Tạo instance mới của {typeof(T)}");
                 }
-
-                return instance;
+                else
+                {
+                    Debug.Log($"[Singleton] Sử dụng instance có sẵn của {typeof(T)}");
+                    DontDestroyOnLoad(instance.gameObject);
+                }
             }
+
+            return instance;
         }
     }
 
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    private static void AutoCreateInstance()
+    protected virtual void OnEnable()
     {
-        var instance = Instance;
+        if (instance == null)
+        {
+            instance = this as T;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     protected virtual void Awake()
@@ -67,10 +66,7 @@ public class SingletonAutoCreate<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 
-    protected virtual void OnAwake()
-    {
-
-    }
+    protected virtual void OnAwake() { }
 
     protected virtual void OnApplicationQuit()
     {
