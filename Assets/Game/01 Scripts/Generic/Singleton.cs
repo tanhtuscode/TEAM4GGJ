@@ -10,35 +10,45 @@ using UnityEngine;
 /// 2. Access from anywhere:
 ///    MyManager.Instance.YourMethod();
 /// </summary>
-public class Singleton<T> where T : class, new()
+public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    private static readonly object lockObject = new object();
+    // create a private reference to T instance
     private static T instance;
 
-    /// <summary>
-    /// Gets the singleton instance. Creates it if it doesn't exist.
-    /// Thread-safe implementation.
-    /// </summary>
     public static T Instance
     {
         get
         {
+            // if instance is null
             if (instance == null)
             {
-                lock (lockObject)
+                // find the generic instance
+                instance = FindObjectOfType<T>();
+
+                // if it's null again create a new object
+                // and attach the generic instance
+                if (instance == null)
                 {
-                    if (instance == null)
-                    {
-                        instance = new T();
-                    }
+                    GameObject obj = new GameObject();
+                    obj.name = typeof(T).Name;
+                    instance = obj.AddComponent<T>();
                 }
             }
             return instance;
         }
     }
 
-    /// <summary>
-    /// Protected constructor to prevent direct instantiation
-    /// </summary>
-    protected Singleton() { }
+    public virtual void Awake()
+    {
+        // create the instance
+        if (instance == null)
+        {
+            instance = this as T;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 }
