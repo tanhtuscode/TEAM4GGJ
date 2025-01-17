@@ -34,4 +34,8 @@ public class ActionEvent
 
     #region SCENE
     #endregion
+
+    #region GamePlay
+    public static Action<int> OnDiceRoll;
+    #endregion
 }
