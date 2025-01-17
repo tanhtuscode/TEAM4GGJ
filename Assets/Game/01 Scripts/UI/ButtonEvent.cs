@@ -4,9 +4,9 @@ public class ButtonEvent : MonoBehaviour
 {
     [SerializeField] private GameObject cvSettings;
 
-    public void Play()
+    public void Play(int indexScene)
     {
-        UIManager.Instance.PlayButtonEvent();
+        UIManager.Instance.PlayButtonEvent(indexScene);
     }
 
     public void Settings()

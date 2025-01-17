@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : Singleton<UIManager>
 {
-    public void PlayButtonEvent()
+    public void PlayButtonEvent(int indexScene)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(indexScene);
     }
     
     public void ExitButtonEvent()
