@@ -21,7 +21,7 @@ public class SettingManager : MonoBehaviour
 
     public void OnVolumeChangeValue()
     {
-        SoundManager.Instance.Volume = _sliderVolume.value;
+        SoundManager.Instance.SetVolume(_sliderVolume.value);
         _txtVolume.text = (int)(_sliderVolume.value * 100) + " %";
     }
     

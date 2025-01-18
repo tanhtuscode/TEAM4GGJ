@@ -30,13 +30,18 @@ public class SoundManager : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    public float Volume { get; set; } = 1;
+    public float Volume { get; private set; } = 1;
     [SerializeField] private GameObject audioPref;
     [SerializeField] private SoundList[] soundLists;
     
     [SerializeField] private AudioClip[] clipsBG;
     private Queue<GameObject> soundQueue = new Queue<GameObject>();
 
+    public void SetVolume(float volume)
+    {
+        Volume = volume;
+        _audioSource.volume = Volume;
+    }
     private void Start()
     {
         if (Application.isPlaying)

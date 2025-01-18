@@ -3,8 +3,6 @@ using UnityEngine;
 public class ButtonEvent : MonoBehaviour
 {
     [SerializeField] private GameObject cvSettings;
-
-    
     
     public void Play(int indexScene)
     {
