@@ -117,7 +117,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Effect_Fade: 1
-    - _EmbossFull_Angle_1: -0.9237075
+    - _EmbossFull_Angle_1: 0.9991939
     - _EmbossFull_Distance_1: 3.03
     - _EmbossFull_Intensity_1: 0.46
     - _EmbossFull_grayfade_1: 2
@@ -157,3 +157,4 @@ Material:
     - _FillColor_Color_1: {r: 0.3814879, g: 1, b: 0.1911765, a: 1}
     - _TintRGBA_Color_1: {r: 1, g: 0.7941177, b: 0, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

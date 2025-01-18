@@ -164,7 +164,7 @@ Material:
     - _StencilWriteMask: 255
     - _UVSec: 0
     - _ZWrite: 1
-    - __CompressionFX_Value_1: 2.9673774
+    - __CompressionFX_Value_1: 12.653426
     m_Colors:
     - Tint_Color: {r: 0, g: 0.9117646, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -173,3 +173,4 @@ Material:
     - _FillColor_Color_1: {r: 0.3814879, g: 1, b: 0.1911765, a: 1}
     - _TintRGBA_Color_1: {r: 1, g: 0.7941177, b: 0, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

@@ -104,7 +104,7 @@ Material:
     - Glass_Seed: 1.067
     - Glass_Size: 13.6
     - Inside_Distance: 0.095
-    - Inside_Fade: 0.94842696
+    - Inside_Fade: 0.28548074
     - Inside_Rotation: -0.85
     - Parasite_Angle: -0.241
     - Parasite_Distance: -0.247
@@ -191,3 +191,4 @@ Material:
     - _TintColor: {r: 0, g: 0.647059, b: 1, a: 1}
     - _TintRGBA_Color_1: {r: 1, g: 0.7941177, b: 0, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
