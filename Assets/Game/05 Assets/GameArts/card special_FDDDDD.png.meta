@@ -1710,7 +1710,70 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      card special_FDDDDD_0: -2420339639316584924
+      card special_FDDDDD_1: 3249193718803877231
+      card special_FDDDDD_10: -2073102265639106213
+      card special_FDDDDD_11: 6613009689933471796
+      card special_FDDDDD_12: -5926879276569319084
+      card special_FDDDDD_13: -5654428827708331312
+      card special_FDDDDD_14: 4953468004649970914
+      card special_FDDDDD_15: -8871696631354801973
+      card special_FDDDDD_16: 8314310647244491415
+      card special_FDDDDD_17: -4169031711117024739
+      card special_FDDDDD_18: -8452692958714133045
+      card special_FDDDDD_19: -7051341557242431385
+      card special_FDDDDD_2: -223256640865881970
+      card special_FDDDDD_20: -8584428540423528498
+      card special_FDDDDD_21: 4647748684531040439
+      card special_FDDDDD_22: -5432144368550961785
+      card special_FDDDDD_23: -6000822795385032006
+      card special_FDDDDD_24: 7746745801135251382
+      card special_FDDDDD_25: 7874036344688642329
+      card special_FDDDDD_26: 3180636538419916029
+      card special_FDDDDD_27: -7206090750811427047
+      card special_FDDDDD_28: 41300368099400795
+      card special_FDDDDD_29: -1499273375006966445
+      card special_FDDDDD_3: 6201464179306508287
+      card special_FDDDDD_30: -6103420288233314633
+      card special_FDDDDD_31: 3195367016834574518
+      card special_FDDDDD_32: 7672328588520737084
+      card special_FDDDDD_33: 3088229966681743361
+      card special_FDDDDD_34: -8119735722211758721
+      card special_FDDDDD_35: 8262453764336539114
+      card special_FDDDDD_36: 8283409926269681484
+      card special_FDDDDD_37: 987811602830004603
+      card special_FDDDDD_38: -5244268719720657505
+      card special_FDDDDD_39: -8572040457137753408
+      card special_FDDDDD_4: -7259865621322041690
+      card special_FDDDDD_40: -4783514862407728924
+      card special_FDDDDD_41: 7727657782739072589
+      card special_FDDDDD_42: 4398768929830184656
+      card special_FDDDDD_43: -5892071220679039851
+      card special_FDDDDD_44: 3570210402884241673
+      card special_FDDDDD_45: 5972223647955360311
+      card special_FDDDDD_46: 7098981248589169974
+      card special_FDDDDD_47: 1022078807051046271
+      card special_FDDDDD_48: 7001331187762379030
+      card special_FDDDDD_49: 2508406504152730417
+      card special_FDDDDD_5: 7055857381706070479
+      card special_FDDDDD_50: 5904932265278669453
+      card special_FDDDDD_51: -4950946117051803092
+      card special_FDDDDD_52: 831543848871165740
+      card special_FDDDDD_53: 3273364874619313634
+      card special_FDDDDD_54: -4460715186538111038
+      card special_FDDDDD_55: 7170151745136062065
+      card special_FDDDDD_56: 6097796244040389641
+      card special_FDDDDD_57: 5885643572533336449
+      card special_FDDDDD_58: -5509014476510231704
+      card special_FDDDDD_59: -6341175813325125420
+      card special_FDDDDD_6: -88596312575555012
+      card special_FDDDDD_60: -5298103323886322737
+      card special_FDDDDD_61: -5470852170680080622
+      card special_FDDDDD_62: 8108693416348189605
+      card special_FDDDDD_7: 5940352911025140875
+      card special_FDDDDD_8: -5859110424302602411
+      card special_FDDDDD_9: 1706397188314901150
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
