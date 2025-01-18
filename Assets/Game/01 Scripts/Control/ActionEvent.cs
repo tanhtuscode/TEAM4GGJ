@@ -37,5 +37,9 @@ public class ActionEvent
 
     #region GamePlay
     public static Action<int> OnDiceRoll;
+    public static Action<int> OnChangeValueBubble;
+    public static Action<int> OnChangeValueCapacity;
+    public static Action<string> OnTalk;
+
     #endregion
 }
