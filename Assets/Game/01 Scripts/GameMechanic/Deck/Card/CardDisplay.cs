@@ -6,11 +6,10 @@ using UnityEngine.UI;
 public class CardDisplay : MonoBehaviour
 {
     [SerializeField] private Image cardImage;
-    [SerializeField] private TMP_Text cardName;
-
+    [SerializeField] private CardType cardType;
     public void SetCard(CardSO card)
     {
         cardImage.sprite = card.Sprite;
-        cardName.text = card.Name;
+        cardType = card.CardType;
     }
 }
