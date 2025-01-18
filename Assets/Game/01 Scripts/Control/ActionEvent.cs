@@ -23,7 +23,7 @@ public class ActionEvent
     #endregion
 
     #region MISSION NOTIFICATION
-
+    
     #endregion
 
     #region COLLECT CAR
@@ -37,5 +37,7 @@ public class ActionEvent
 
     #region GamePlay
     public static Action<int> OnDiceRoll;
+    public static Action<int> AddValueToMainBubble;
+    public static Action<int> AddValueToCapacityBubble;
     #endregion
 }

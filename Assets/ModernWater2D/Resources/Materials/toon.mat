@@ -21,13 +21,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: toon
-  m_Shader: {fileID: -6465566751694194690, guid: 5d62d60e229475c4f96e6e30dcdeec22, type: 3}
+  m_Shader: {fileID: 4800000, guid: 13c02b14c4d048fa9653293d54f6e0e1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -42,6 +42,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Mask_R_Emission:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -60,13 +68,16 @@ Material:
     m_Ints: []
     m_Floats:
     - Brightness_Rim: 1.96
+    - PixelSnap: 0
     - Rim_Power: 5
     - Toon_Ramp_Offset: 0.5
     - Toon_Ramp_Smoothness: 0
+    - _EnableExternalAlpha: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
     - Toon_Ramp_Tint: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
